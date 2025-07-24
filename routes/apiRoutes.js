@@ -1,17 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const expenseController = require('../controller/apiController');
+const controller = require('../controllers/apiControllers');
 
-// Route to create a new expense
-router.post('/expense', expenseController.createExpense);
-
-// Route to get all expenses
-router.get('/expenses', expenseController.getExpenses);
-
-// Route to delete an expense by ID
-router.delete('/expense/:id', expenseController.deleteExpense);
-
-// Route to edit an expense by ID (Bonus Task)
-router.put('/expense/:id', expenseController.editExpense);
+router.post('/add', controller.addReview);
+router.get('/:name', controller.getReviewsByCompany);
 
 module.exports = router;
